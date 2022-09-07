@@ -4,10 +4,8 @@
   <meta charset="utf-8">
   
   
-  <meta name="description" content="#知识蒸馏开山之作–Distilling the knowledge in a Neutral Model
-关于深度学习的重要技术，知识蒸馏广泛用于各种的训练中，所以在这里简单记录一下我阅读知识蒸馏的开山之作的理解。
-##0、简单的对于知识蒸馏是什么的解释
-最简单的讲，就是用教师网络训练的知识，迁移" />
+  <meta name="description" content="知识蒸馏开山之作–Distilling the knowledge in a Neutral Model关于深度学习的重要技术，知识蒸馏广泛用于各种的训练中，所以在这里简单记录一下我阅读知识蒸馏的开山之作的理解。
+0、简单的对于知识蒸馏是什么的解释最简单的讲，就是用教师网络训练的知识，迁移给学生网络" />
   
 
   
@@ -18,15 +16,15 @@
   
   <title>Distilling the Knowledge | guoshu huang&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="#知识蒸馏开山之作–Distilling the knowledge in a Neutral Model 关于深度学习的重要技术，知识蒸馏广泛用于各种的训练中，所以在这里简单记录一下我阅读知识蒸馏的开山之作的理解。 ##0、简单的对于知识蒸馏是什么的解释 最简单的讲，就是用教师网络训练的知识，迁移给学生网络，达到压缩模型的大小，知识蒸馏的效果。 一言以蔽之，就是想方法把大模型压缩成小模型的方法。">
+  <meta name="description" content="知识蒸馏开山之作–Distilling the knowledge in a Neutral Model关于深度学习的重要技术，知识蒸馏广泛用于各种的训练中，所以在这里简单记录一下我阅读知识蒸馏的开山之作的理解。 0、简单的对于知识蒸馏是什么的解释最简单的讲，就是用教师网络训练的知识，迁移给学生网络，达到压缩模型的大小，知识蒸馏的效果。 一言以蔽之，就是想方法把大模型压缩成小模型的方法。 目前可以">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Distilling the Knowledge">
 <meta property="og:url" content="http://example.com/2022/09/07/Distilling-the-Knowledge/index.html">
 <meta property="og:site_name" content="guoshu huang&#39;s blog">
-<meta property="og:description" content="#知识蒸馏开山之作–Distilling the knowledge in a Neutral Model 关于深度学习的重要技术，知识蒸馏广泛用于各种的训练中，所以在这里简单记录一下我阅读知识蒸馏的开山之作的理解。 ##0、简单的对于知识蒸馏是什么的解释 最简单的讲，就是用教师网络训练的知识，迁移给学生网络，达到压缩模型的大小，知识蒸馏的效果。 一言以蔽之，就是想方法把大模型压缩成小模型的方法。">
+<meta property="og:description" content="知识蒸馏开山之作–Distilling the knowledge in a Neutral Model关于深度学习的重要技术，知识蒸馏广泛用于各种的训练中，所以在这里简单记录一下我阅读知识蒸馏的开山之作的理解。 0、简单的对于知识蒸馏是什么的解释最简单的讲，就是用教师网络训练的知识，迁移给学生网络，达到压缩模型的大小，知识蒸馏的效果。 一言以蔽之，就是想方法把大模型压缩成小模型的方法。 目前可以">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-09-07T11:22:55.000Z">
-<meta property="article:modified_time" content="2022-09-07T11:49:22.372Z">
+<meta property="article:modified_time" content="2022-09-07T13:07:41.615Z">
 <meta property="article:author" content="guoshu huang">
 <meta name="twitter:card" content="summary">
   
@@ -90,18 +88,25 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://example.com/2022/09/07/Distilling-the-Knowledge/" data-id="cl7rk63r10001uwumg1hvdycm" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://example.com/2022/09/07/Distilling-the-Knowledge/" data-id="cl7rmz6iw00018wumfwhpepy6" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
     <div class="entry-content">
       
-        <p>#知识蒸馏开山之作–Distilling the knowledge in a Neutral Model</p>
-<p>关于深度学习的重要技术，知识蒸馏广泛用于各种的训练中，所以在这里简单记录一下我阅读知识蒸馏的开山之作的理解。</p>
-<p>##0、简单的对于知识蒸馏是什么的解释</p>
-<p>最简单的讲，就是用教师网络训练的知识，迁移给学生网络，达到压缩模型的大小，知识蒸馏的效果。</p>
+        <h1 id="知识蒸馏开山之作–Distilling-the-knowledge-in-a-Neutral-Model"><a href="#知识蒸馏开山之作–Distilling-the-knowledge-in-a-Neutral-Model" class="headerlink" title="知识蒸馏开山之作–Distilling the knowledge in a Neutral Model"></a>知识蒸馏开山之作–Distilling the knowledge in a Neutral Model</h1><p>关于深度学习的重要技术，知识蒸馏广泛用于各种的训练中，所以在这里简单记录一下我阅读知识蒸馏的开山之作的理解。</p>
+<h2 id="0、简单的对于知识蒸馏是什么的解释"><a href="#0、简单的对于知识蒸馏是什么的解释" class="headerlink" title="0、简单的对于知识蒸馏是什么的解释"></a>0、简单的对于知识蒸馏是什么的解释</h2><p>最简单的讲，就是用教师网络训练的知识，迁移给学生网络，达到压缩模型的大小，知识蒸馏的效果。</p>
 <p>一言以蔽之，就是想方法把大模型压缩成小模型的方法。</p>
 <p>目前可以达到把大模型压缩成小模型的方法有：知识蒸馏，权值量化，剪枝，注意力迁移。</p>
+<h2 id="1、一些前置知识的了解"><a href="#1、一些前置知识的了解" class="headerlink" title="1、一些前置知识的了解"></a>1、一些前置知识的了解</h2><h3 id="1-1-hard-target和soft-target"><a href="#1-1-hard-target和soft-target" class="headerlink" title="1.1 hard target和soft target"></a>1.1 hard target和soft target</h3><p>举个例子，比如训练模型，用的是数字2的图片，那么用hard target，就是{2：1，3：0，7：0，8：0}</p>
+<p>但实际上，数字2，可能也和数字3，数字7有一定的相似度，那么用soft target,可能就是{2：0.8，3：0.1，7：0.08，8：0.02}</p>
+<h3 id="1-2-似然概率和多类交叉熵损失函数"><a href="#1-2-似然概率和多类交叉熵损失函数" class="headerlink" title="1.2 似然概率和多类交叉熵损失函数"></a>1.2 似然概率和多类交叉熵损失函数</h3><p>似然概率：全部样本都被正确预测发生的概率之积</p>
+<p>对所有的概率取对数，再添加负号，就得以得到具有熵性质的数据（熵越大，数据越多，准确率越小；熵越小，数据越少，准确率越大），这就是多类交叉熵损失函数</p>
+<p>所以可以得到，最大似然概率等价于最小多分类交叉熵损失函数</p>
+<h2 id="2、那么怎么做到知识蒸馏呢"><a href="#2、那么怎么做到知识蒸馏呢" class="headerlink" title="2、那么怎么做到知识蒸馏呢"></a>2、那么怎么做到知识蒸馏呢</h2><p>一般的训练过程：神经网络有若干权重，训练后求得损失函数，在通过求得损失函数相对于神经网络的每个权重的偏导数，根据偏导数，修改权重，使得损失函数最小化。</p>
+<p>而知识蒸馏正是通过，使用数据集对教师网络进行训练，得到的soft target作为label来训练学生网络</p>
+<p>此时还有一个问题，就是可能soft target并不是那么soft（平滑），可能导致其更加趋向于hard target（非正确项概率趋于0），那么如何解决这个问题呢？</p>
+<p>有的团队使用的是均方误差拟合，而本文使用的是加入温度（T）</p>
 
       
     </div><!-- .entry-content -->
